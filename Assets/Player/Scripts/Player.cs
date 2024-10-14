@@ -40,6 +40,11 @@ public class Player : MonoBehaviour
             jumping = true;
             isGrounded = false;
         }
+
+        if (Input.GetKey(KeyCode.R))
+        {
+            respawneador.Respawn();
+        }
     }
 
     void FixedUpdate()
