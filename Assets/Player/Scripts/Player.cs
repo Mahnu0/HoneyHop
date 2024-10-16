@@ -15,6 +15,8 @@ public class Player : MonoBehaviour
     bool isGrounded = true;
     bool jumping = false;
 
+    static public int attemps;
+
     Vector3 initialPosition;
     float initialSpeed;
     float initialJumpForce;
@@ -41,9 +43,9 @@ public class Player : MonoBehaviour
             isGrounded = false;
         }
 
-        if (Input.GetKey(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.R))
         {
-            respawneador.Respawn();
+            respawneador.Respawn(0);
         }
     }
 
@@ -66,11 +68,19 @@ public class Player : MonoBehaviour
         }
     }
 
+    void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            isGrounded = false;
+        }
+    }
+
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Killer"))
         {
-            respawneador.Respawn();
+            respawneador.Respawn(2);
         }
     }
 

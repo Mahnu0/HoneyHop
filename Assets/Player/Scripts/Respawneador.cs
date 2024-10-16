@@ -6,18 +6,22 @@ public class Respawneador : MonoBehaviour
 {
     public GameObject player;
 
-    public void Respawn()
+    public void Respawn(float t)
     {
         player.SetActive(false);
 
-        StartCoroutine(ActivatePlayer());
+        Player.attemps++;
+
+        StartCoroutine(ActivatePlayer(t));
     }
 
-    IEnumerator ActivatePlayer()
+    IEnumerator ActivatePlayer(float t)
     {
         player.SetActive(false);
 
-        yield return new WaitForSeconds(2);
+
+
+        yield return new WaitForSeconds(t);
 
         player.transform.position = new Vector3(0, 1, 0);
 
