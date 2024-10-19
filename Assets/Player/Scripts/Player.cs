@@ -78,7 +78,7 @@ public class Player : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Killer"))
+        if (other.gameObject.CompareTag("Killer") || other.gameObject.CompareTag("Enemy"))
         {
             respawneador.Respawn(2);
         }
