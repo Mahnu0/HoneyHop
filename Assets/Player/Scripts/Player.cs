@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] float SpeedX;
+    [SerializeField] float Speed;
     [SerializeField] float JumpForce;
+    [SerializeField] float rotationSpeed;
 
     Rigidbody rb;
     Collision col;
@@ -14,6 +15,7 @@ public class Player : MonoBehaviour
 
     bool isGrounded = true;
     bool jumping = false;
+    bool orbitalArrow = false;
 
     static public int attemps;
 
@@ -21,7 +23,7 @@ public class Player : MonoBehaviour
     float initialSpeed;
     float initialJumpForce;
 
-    // Start is called before the first frame update
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -30,34 +32,63 @@ public class Player : MonoBehaviour
         respawneador = GetComponent<Respawneador>();
 
         initialPosition = transform.position;
-        initialSpeed = SpeedX;
+        initialSpeed = Speed;
         initialJumpForce = JumpForce;
     }
 
-    // Update is called once per frame
+
     void Update()
     {
-        if(Input.GetKey(KeyCode.Space) && isGrounded)
+        if(orbitalArrow == false)
         {
-            jumping = true;
-            isGrounded = false;
+            if (Input.GetKey(KeyCode.Space) && isGrounded)
+            {
+                jumping = true;
+                isGrounded = false;
+            }            
+        }
+        else if (orbitalArrow == true)
+        {
+            if (Input.GetKey(KeyCode.Space))
+            {
+                transform.Rotate(0, 0, rotationSpeed);
+            }
+            else
+            {
+                Speed = initialSpeed;
+            }
         }
 
+
+        // ONLY FOR TESTING, REMEMBER TO DELETE IN FINAL VERSION
         if (Input.GetKeyDown(KeyCode.R))
         {
             respawneador.Respawn(0);
         }
+
     }
 
     void FixedUpdate()
     {
-        if(jumping)
+        if (orbitalArrow == false)
         {
-            rb.AddForce(0, JumpForce, 0, ForceMode.Impulse);
-            jumping = false;
-        }
+            if (jumping)
+            {
+                rb.AddForce(0, JumpForce, 0, ForceMode.Impulse);
+                jumping = false;
+            }
 
-        rb.velocity = new Vector3(SpeedX, rb.velocity.y, 0);
+            rb.velocity = new Vector3(Speed, rb.velocity.y, 0);
+        }
+        else
+        {
+            Vector3 pointingDirection = new Vector3(transform.right.x, transform.right.y, 0);
+
+            rb.velocity = pointingDirection * Speed;
+        }
+        
+
+        
     }
 
     void OnCollisionEnter(Collision collision)
@@ -81,6 +112,14 @@ public class Player : MonoBehaviour
         if (other.gameObject.CompareTag("Killer") || other.gameObject.CompareTag("Enemy"))
         {
             respawneador.Respawn(2);
+        }
+        else if(other.gameObject.CompareTag("Portal") && orbitalArrow == false)
+        {
+            orbitalArrow = true;
+
+            Physics.gravity = Vector3.zero;
+
+            rb.velocity = new Vector3(Speed, 0, 0);
         }
     }
 
