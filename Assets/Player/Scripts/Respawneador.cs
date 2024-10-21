@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class Respawneador : MonoBehaviour
@@ -19,7 +20,9 @@ public class Respawneador : MonoBehaviour
     {
         player.SetActive(false);
 
+        Physics.gravity = new Vector3(0, -45, 0);
 
+        player.transform.rotation = quaternion.Euler(0, 0, 0);
 
         yield return new WaitForSeconds(t);
 
