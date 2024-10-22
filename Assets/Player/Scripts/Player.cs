@@ -18,7 +18,9 @@ public class Player : MonoBehaviour
     bool jumping = false;
     bool orbitalArrow = false;
     bool standStill = false;
+    bool powerMeterEmpty = false;
 
+    static public float standStillTime = 5;
     static public int attemps;
 
     Vector3 initialPosition;
