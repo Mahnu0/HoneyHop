@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using Unity.Mathematics;
 
 public class Player : MonoBehaviour
 {
@@ -8,6 +10,7 @@ public class Player : MonoBehaviour
     [SerializeField] float JumpForce;
     [SerializeField] float rotationSpeed;
     [SerializeField] GameObject arrow;
+    [SerializeField] Image powerMeter;
 
     Rigidbody rb;
     Collision col;
@@ -18,7 +21,7 @@ public class Player : MonoBehaviour
     bool jumping = false;
     bool orbitalArrow = false;
     bool standStill = false;
-    bool powerMeterEmpty = false;
+    bool refillPowerMeter = false;
 
     static public float standStillTime = 5;
     static public int attemps;
@@ -34,10 +37,6 @@ public class Player : MonoBehaviour
         col = GetComponent<Collision>();
 
         respawneador = GetComponent<Respawneador>();
-
-        
-
-        
 
         initialPosition = transform.position;
         initialSpeed = Speed;
@@ -60,7 +59,8 @@ public class Player : MonoBehaviour
         else if (orbitalArrow)
         {
             // PLAYER STANDS STILL WHILE ROTATING BETWEEN 75 AND -75 DEGREES ON INPUT
-            if (Input.GetKey(KeyCode.Space))
+            // IF THE POWER METER IS NOT REFILLING
+            if (Input.GetKey(KeyCode.Space) && refillPowerMeter == false)
             {
                 float rotation = transform.rotation.eulerAngles.z;
                 
@@ -85,9 +85,42 @@ public class Player : MonoBehaviour
                 rb.velocity = Vector3.zero;
 
                 standStill = true;
+
+                // STARTS A 5s TIMER
+                standStillTime -= Time.deltaTime;
+
+                if(standStillTime <= 0)
+                {
+                    standStillTime = 0;
+                    refillPowerMeter = true;
+                }
             }
-            else { standStill = false; }
+            else
+            {
+                standStill = false;
+                
+                if(standStillTime != 5 && refillPowerMeter == false)
+                {
+                    refillPowerMeter = true;
+                }
+            }
+
+            // REFILLS THE POWER METER IF EMPTY
             
+
+            
+            
+        }
+
+        if (refillPowerMeter == true)
+        {
+            standStillTime += Time.deltaTime * 2f;
+
+            if (standStillTime >= 5)
+            {
+                standStillTime = 5;
+                refillPowerMeter = false;
+            }
         }
 
 
@@ -98,6 +131,8 @@ public class Player : MonoBehaviour
             orbitalArrow = false;
             arrow.SetActive(false);
         }
+
+        powerMeter.fillAmount = standStillTime / 5;
 
     }
 
@@ -157,6 +192,16 @@ public class Player : MonoBehaviour
             Physics.gravity = Vector3.zero;
 
             arrow.SetActive(true);
+        }
+        else if (other.gameObject.CompareTag("Portal") && orbitalArrow == true)
+        {
+            orbitalArrow = false;
+
+            Physics.gravity = new Vector3(0, -45, 0);
+
+            transform.rotation = quaternion.Euler(0, 0, 0);
+
+            arrow.SetActive(false);
         }
     }    
 }
