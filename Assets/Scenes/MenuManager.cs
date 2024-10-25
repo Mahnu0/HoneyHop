@@ -19,4 +19,24 @@ public class MenuManager : MonoBehaviour
     {
         SceneManager.LoadScene("LVL_3", LoadSceneMode.Single);
     }
+
+    public void Play()
+    {
+        SceneManager.LoadScene("LVL_Select", LoadSceneMode.Single);
+    }
+
+    public void Options()
+    {
+        // SceneManager.LoadScene("LVL_3", LoadSceneMode.Single);
+    }
+
+    public void Exit()
+    {
+        Application.Quit();
+    }
+
+    public void Back()
+    {
+        SceneManager.LoadScene("Main_Menu", LoadSceneMode.Single);
+    }
 }
