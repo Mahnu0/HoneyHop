@@ -15,7 +15,7 @@ public class Score : MonoBehaviour
     {
         Counter.text = $"{Coins.count} / {Coins.maxCount}";
 
-        Attemps.text = $"Attemps {Player.attemps}";
+        Attemps.text = $"Attempt {Player.attemps}";
 
 
 

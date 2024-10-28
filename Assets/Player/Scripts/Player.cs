@@ -43,6 +43,11 @@ public class Player : MonoBehaviour
         initialJumpForce = JumpForce;
     }
 
+    public Vector3 GetInitialPosition()
+    {
+        return initialPosition;
+    }
+
 
     void Update()
     {
