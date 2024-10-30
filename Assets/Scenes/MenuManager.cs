@@ -1,29 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
-    public Animator transition;
-
-    public float transitionTime = 1f;
-
-    string nextScene;
     public void LVL1()
     {
-        StartCoroutine(LoadLevel("LVL_1"));
+        SceneManager.LoadScene("LVL_1", LoadSceneMode.Single);
     }
 
     public void LVL2()
     {
-        StartCoroutine(LoadLevel("LVL_2"));
+        SceneManager.LoadScene("LVL_2", LoadSceneMode.Single);
     }
 
     public void LVL3()
     {
-        StartCoroutine(LoadLevel("LVL_3"));
+        SceneManager.LoadScene("LVL_3", LoadSceneMode.Single);
     }
 
     public void Play()
@@ -44,14 +38,5 @@ public class MenuManager : MonoBehaviour
     public void Back()
     {
         SceneManager.LoadScene("Menu_Main", LoadSceneMode.Single);
-    }
-
-    IEnumerator LoadLevel(string scene)
-    {
-        transition.SetTrigger("Start");
-
-        yield return new WaitForSeconds(transitionTime);
-
-        SceneManager.LoadScene(scene, LoadSceneMode.Single);
     }
 }

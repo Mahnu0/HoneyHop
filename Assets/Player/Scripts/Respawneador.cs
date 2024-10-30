@@ -26,7 +26,7 @@ public class Respawneador : MonoBehaviour
 
         yield return new WaitForSeconds(t);
 
-        player.transform.position = player.;
+        player.transform.position = new Vector3(-11, 1, 0);
 
         player.SetActive(true);
     }

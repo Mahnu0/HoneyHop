@@ -13,7 +13,6 @@ public class Player : MonoBehaviour
     [SerializeField] Image powerMeter;
 
     Rigidbody rb;
-    Collision col;
 
     public Respawneador respawneador;
 
@@ -34,7 +33,6 @@ public class Player : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        col = GetComponent<Collision>();
 
         respawneador = GetComponent<Respawneador>();
 
