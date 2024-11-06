@@ -5,29 +5,31 @@ using UnityEngine;
 
 public class Respawneador : MonoBehaviour
 {
-    public GameObject player;
+    static float timer = 0;
 
-    public void Respawn(float t)
+    static public void Respawn(GameObject player, float t)
     {
         player.SetActive(false);
 
         Player.attemps++;
 
-        StartCoroutine(ActivatePlayer(t));
-    }
+        if(timer >= t)
+        {
+            player.SetActive(false);
 
-    IEnumerator ActivatePlayer(float t)
-    {
-        player.SetActive(false);
+            Physics.gravity = new Vector3(0, -45, 0);
 
-        Physics.gravity = new Vector3(0, -45, 0);
+            player.transform.rotation = quaternion.Euler(0, 0, 0);
 
-        player.transform.rotation = quaternion.Euler(0, 0, 0);
+            player.GetComponent<Rigidbody>().velocity = new Vector3(9, 0, 0);
 
-        yield return new WaitForSeconds(t);
+            player.transform.position = new Vector3(-11, 1, 0);
 
-        player.transform.position = new Vector3(-11, 1, 0);
+            player.SetActive(true);
 
-        player.SetActive(true);
+            timer = 0;
+        }
+
+        timer += Time.deltaTime;
     }
 }

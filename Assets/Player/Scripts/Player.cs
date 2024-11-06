@@ -14,8 +14,6 @@ public class Player : MonoBehaviour
 
     Rigidbody rb;
 
-    public Respawneador respawneador;
-
     bool isGrounded = true;
     bool jumping = false;
     bool orbitalArrow = false;
@@ -33,9 +31,6 @@ public class Player : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-
-        respawneador = GetComponent<Respawneador>();
-
         initialPosition = transform.position;
         initialSpeed = Speed;
         initialJumpForce = JumpForce;
@@ -74,16 +69,15 @@ public class Player : MonoBehaviour
                     transform.rotation = Quaternion.Euler(0, 0, 75);
 
                     rotationSpeed = -rotationSpeed;
-                }
-                
-                if (rotation < -75)
+                }                
+                else if (rotation < -75)
                 {
                     transform.rotation = Quaternion.Euler(0, 0, -75);
 
                     rotationSpeed = -rotationSpeed;
                 }
 
-                transform.Rotate(0, 0, rotationSpeed);
+                transform.Rotate(0, 0, rotationSpeed * Time.deltaTime);
 
                 rb.velocity = Vector3.zero;
 
@@ -130,7 +124,7 @@ public class Player : MonoBehaviour
         // !!!!!!!!!!!!! ONLY FOR TESTING, REMEMBER TO DELETE IN FINAL VERSION !!!!!!!!!!!!!!!!!!
         if (Input.GetKeyDown(KeyCode.R))
         {
-            respawneador.Respawn(0);
+            Respawneador.Respawn(this.gameObject, 0);
             orbitalArrow = false;
             arrow.SetActive(false);
         }
@@ -161,6 +155,7 @@ public class Player : MonoBehaviour
             Vector3 direction = transform.right;
 
             rb.velocity = direction * Speed;
+
         }        
     }
 
@@ -184,7 +179,7 @@ public class Player : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Killer") || other.gameObject.CompareTag("Enemy"))
         {
-            respawneador.Respawn(2);
+            Respawneador.Respawn(this.gameObject, 0);
             orbitalArrow = false;
             arrow.SetActive(false);
         }
