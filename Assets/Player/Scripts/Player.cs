@@ -19,6 +19,11 @@ public class Player : MonoBehaviour
     bool orbitalArrow = false;
     bool standStill = false;
     bool refillPowerMeter = false;
+    bool turnDown;
+    bool turnUp;
+    //bool isGoingDown = false;
+    //bool isGoingUp = true;
+
 
     static public float standStillTime = 5;
     static public int attemps;
@@ -64,20 +69,27 @@ public class Player : MonoBehaviour
                 
                 if (rotation > 180) { rotation -= 360; }
 
-                if (rotation > 75)
+                if (rotation > 75 && rotationSpeed > 0)
                 {
-                    transform.rotation = Quaternion.Euler(0, 0, 75);
-
-                    rotationSpeed = -rotationSpeed;
+                    turnDown = true;
                 }                
-                else if (rotation < -75)
+                else if (rotation < -75 && rotationSpeed < 0)
                 {
-                    transform.rotation = Quaternion.Euler(0, 0, -75);
-
-                    rotationSpeed = -rotationSpeed;
+                    turnUp = true;
                 }
 
-                transform.Rotate(0, 0, rotationSpeed * Time.deltaTime);
+                if(turnUp)
+                {
+                    rotationSpeed = -rotationSpeed;
+                    turnUp = false;
+                }
+                else if(turnDown)
+                {
+                    rotationSpeed = -rotationSpeed;
+                    turnDown = false;
+                }
+
+                transform.Rotate(0, 0, rotationSpeed*Time.deltaTime, Space.World);
 
                 rb.velocity = Vector3.zero;
 
@@ -148,7 +160,14 @@ public class Player : MonoBehaviour
             // MOVE THE PLAYER
             rb.velocity = new Vector3(Speed, rb.velocity.y, 0);
         }
-        else if(standStill == false && orbitalArrow)
+        else
+        {
+
+        }
+
+
+
+        if(standStill == false && orbitalArrow)
         {
             // ORBITAL ARROW MOVEMENT
             // Vector3 direction = new Vector3(transform.forward.z, transform.forward.z, 0).normalized;
