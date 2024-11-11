@@ -48,8 +48,10 @@ MonoBehaviour:
   transition: {fileID: 7678812124279463732}
   transitionTime: 1
   nextScene: 0
-  level1: 3
-  level2: 4
+  levelSelector: 3
+  level1: 4
+  level2: 5
+  level3: 0
   menu: 2
 --- !u!1 &3097232733841184850
 GameObject:

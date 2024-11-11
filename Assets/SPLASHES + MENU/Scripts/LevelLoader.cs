@@ -9,8 +9,10 @@ public class LevelLoader : MonoBehaviour
     public Animator transition;
     public float transitionTime = 1f;
     public int nextScene;
+    public int levelSelector;
     public int level1;
     public int level2;
+    public int level3;
     public int menu;
 
     float timer = 5;
@@ -57,7 +59,22 @@ public class LevelLoader : MonoBehaviour
 
     public void PlayGame()
     {
+        LoadNextLevel(levelSelector);
+    }
+
+    public void Level1()
+    {
         LoadNextLevel(level1);
+    }
+
+    public void Level2()
+    {
+        LoadNextLevel(level2);
+    }
+
+    public void Level3()
+    {
+        LoadNextLevel(level3);
     }
 
     public void QuitGame()
