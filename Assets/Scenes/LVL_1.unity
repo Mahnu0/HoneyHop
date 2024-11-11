@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 2388.348, g: 2512.008, b: 3641.6958, a: 1}
+  m_IndirectSpecularColor: {r: 2385.6985, g: 2509.5476, b: 3639.1743, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2222,6 +2222,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   VictoryCanvas: {fileID: 394682332}
+  levelLoader: {fileID: 0}
+  victoryDuration: 1.5
 --- !u!65 &433963975
 BoxCollider:
   m_ObjectHideFlags: 0
