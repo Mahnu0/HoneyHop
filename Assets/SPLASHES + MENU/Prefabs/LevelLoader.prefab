@@ -134,7 +134,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beaa962f858e89641a4e3cacdc4cad33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  transition: {fileID: 7678812124279463732}
+  transitions:
+  - {fileID: 7678812124279463732}
+  - {fileID: 8174732738131009739}
   transitionTime: 1
   nextScene: 0
   levelSelector: 3
