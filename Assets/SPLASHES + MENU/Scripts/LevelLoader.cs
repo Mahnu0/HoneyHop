@@ -60,7 +60,7 @@ public class LevelLoader : MonoBehaviour
         }
         else if (currentScene == level2)
         {
-            if (Input.GetKeyDown(KeyCode.Space) && !crossfade)
+            if (Input.GetKeyDown(KeyCode.P) && !crossfade)
             {
                 LoadNextLevel(menu, 1);
             }
