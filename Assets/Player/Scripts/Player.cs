@@ -13,6 +13,7 @@ public class Player : MonoBehaviour
     [SerializeField] Image powerMeter;
 
     Rigidbody rb;
+    public Respawneador respawneador;
 
     bool isGrounded = true;
     bool jumping = false;
@@ -136,7 +137,7 @@ public class Player : MonoBehaviour
         // !!!!!!!!!!!!! ONLY FOR TESTING, REMEMBER TO DELETE IN FINAL VERSION !!!!!!!!!!!!!!!!!!
         if (Input.GetKeyDown(KeyCode.R))
         {
-            Respawneador.Respawn(this.gameObject, 0);
+            respawneador.Respawn();
             orbitalArrow = false;
             arrow.SetActive(false);
         }
@@ -198,7 +199,7 @@ public class Player : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Killer") || other.gameObject.CompareTag("Enemy"))
         {
-            Respawneador.Respawn(this.gameObject, 0);
+            respawneador.Respawn();
             orbitalArrow = false;
             arrow.SetActive(false);
         }

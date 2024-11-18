@@ -5,31 +5,45 @@ using UnityEngine;
 
 public class Respawneador : MonoBehaviour
 {
-    static float timer = 0;
+    public float timeToRespawn = 0;
+    [SerializeField] GameObject player;
 
-    static public void Respawn(GameObject player, float t)
+    float timer = 0;
+    bool isRespawning = false;
+
+    public void Respawn()
     {
-        player.SetActive(false);
+        isRespawning = true;
+    }
 
-        Player.attemps++;
-
-        if(timer >= t)
+    private void Update()
+    {
+        if(isRespawning)
         {
             player.SetActive(false);
 
-            Physics.gravity = new Vector3(0, -45, 0);
+            Player.attemps++;
 
-            player.transform.rotation = quaternion.Euler(0, 0, 0);
+            if (timer >= timeToRespawn)
+            {
+                player.SetActive(false);
 
-            player.GetComponent<Rigidbody>().velocity = new Vector3(9, 0, 0);
+                Physics.gravity = new Vector3(0, -45, 0);
 
-            player.transform.position = new Vector3(-20f, 1f, 0);
+                player.transform.rotation = quaternion.Euler(0, 0, 0);
 
-            player.SetActive(true);
+                player.GetComponent<Rigidbody>().velocity = new Vector3(9, 0, 0);
 
-            timer = 0;
-        }
+                player.transform.position = new Vector3(-20f, 1f, 0);
 
-        timer += Time.deltaTime;
+                player.SetActive(true);
+
+                timer = 0;
+
+                isRespawning = false;
+            }
+
+            timer += Time.deltaTime;
+        }        
     }
 }
