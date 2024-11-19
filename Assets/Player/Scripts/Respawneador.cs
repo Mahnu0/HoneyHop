@@ -34,7 +34,7 @@ public class Respawneador : MonoBehaviour
 
                 player.GetComponent<Rigidbody>().velocity = new Vector3(9, 0, 0);
 
-                player.transform.position = new Vector3(-20f, 1f, 0);
+                player.transform.position = new Vector3(-15f, 1f, 0);
 
                 player.SetActive(true);
 

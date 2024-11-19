@@ -27,6 +27,9 @@ EditorBuildSettings:
     path: Assets/SPLASHES + MENU/Scenes/Menu_Select_Level.unity
     guid: 8e53da35d83e242408b02c3b6a160d31
   - enabled: 1
+    path: Assets/SPLASHES + MENU/Scenes/Level_3_Example.unity
+    guid: d365e3755466c80468077048a044722f
+  - enabled: 1
     path: Assets/SPLASHES + MENU/Scenes/Level_1_Example.unity
     guid: f5458cb8ad5135f42839272b215fce43
   - enabled: 1
