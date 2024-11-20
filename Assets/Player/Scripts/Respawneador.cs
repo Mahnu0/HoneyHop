@@ -8,6 +8,8 @@ public class Respawneador : MonoBehaviour
     public float timeToRespawn = 0;
     [SerializeField] GameObject player;
 
+    Player playerBee;
+
     float timer = 0;
     bool isRespawning = false;
 
@@ -20,9 +22,7 @@ public class Respawneador : MonoBehaviour
     {
         if(isRespawning)
         {
-            player.SetActive(false);
-
-            Player.attemps++;
+            player.SetActive(false);            
 
             if (timer >= timeToRespawn)
             {
@@ -33,6 +33,7 @@ public class Respawneador : MonoBehaviour
                 player.transform.rotation = quaternion.Euler(0, 0, 0);
 
                 player.GetComponent<Rigidbody>().velocity = new Vector3(9, 0, 0);
+                player.GetComponent<Rigidbody>().AddForce(0, 99, 0);
 
                 player.transform.position = new Vector3(-15f, 1f, 0);
 
@@ -41,6 +42,8 @@ public class Respawneador : MonoBehaviour
                 timer = 0;
 
                 isRespawning = false;
+
+                Player.attemps++;
             }
 
             timer += Time.deltaTime;

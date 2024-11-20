@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
-using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
@@ -103,6 +102,8 @@ public class LevelLoader : MonoBehaviour
         SavePreviousScene();
 
         StartCoroutine(LoadLevel(scene, t));
+
+        Coins.maxCount = 0;
         
         crossfade = false;
     }

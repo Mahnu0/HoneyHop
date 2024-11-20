@@ -15,8 +15,8 @@ public class Player : MonoBehaviour
     Rigidbody rb;
     public Respawneador respawneador;
 
-    bool isGrounded = true;
-    bool jumping = false;
+    public bool isGrounded = true;
+    public bool jumping = false;
     bool orbitalArrow = false;
     bool standStill = false;
     bool refillPowerMeter = false;

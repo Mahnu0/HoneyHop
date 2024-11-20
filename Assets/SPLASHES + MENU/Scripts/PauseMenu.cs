@@ -52,6 +52,8 @@ public class PauseMenu : MonoBehaviour
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        Coins.maxCount = 0;
+        Coins.count = 0;
     }
 
     public void MainMenu()

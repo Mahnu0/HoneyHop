@@ -35,11 +35,4 @@ public class Coins : MonoBehaviour
     //        SetEase(Ease.Linear).
     //        SetLoops(-1);
     //}
-
-
-    void OnDestroy()
-    {
-        Destroy(gameObject);
-        //Destroy(transform);
-    }
 }
