@@ -7,6 +7,7 @@ public class PauseMenu : MonoBehaviour
 {
     public LevelLoader levelLoader;
     public GameObject pauseMenuUI;
+    public GameObject optionMenuUI;
     public GameObject inGameMenuUI;
     public int menu;
 
@@ -35,6 +36,7 @@ public class PauseMenu : MonoBehaviour
     public void Resume()
     {
         pauseMenuUI.SetActive(false);
+        optionMenuUI.SetActive(false);
         inGameMenuUI.SetActive(true);
         Time.timeScale = 1f;
         gamePaused = false;

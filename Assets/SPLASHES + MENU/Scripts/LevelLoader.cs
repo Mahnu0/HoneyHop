@@ -8,7 +8,7 @@ using UnityEngine.UIElements;
 public class LevelLoader : MonoBehaviour
 {
     public Animator[] transitions;
-    public float transitionTime = 1f;
+    public float transitionTime = 2f;
     public int nextScene;
     public int levelSelector;
     public int level1;

@@ -66,6 +66,11 @@ public class Player : MonoBehaviour
             // IF THE POWER METER IS NOT REFILLING
             if (Input.GetKey(KeyCode.Space) && refillPowerMeter == false)
             {
+                if(!rb.isKinematic)
+                {
+                    rb.isKinematic = true;
+                }
+
                 float rotation = transform.rotation.eulerAngles.z;
                 
                 if (rotation > 180) { rotation -= 360; }
@@ -92,7 +97,7 @@ public class Player : MonoBehaviour
 
                 transform.Rotate(0, 0, rotationSpeed*Time.deltaTime, Space.World);
 
-                rb.velocity = Vector3.zero;
+                // rb.velocity = Vector3.zero;
 
                 standStill = true;
 
@@ -107,6 +112,11 @@ public class Player : MonoBehaviour
             }
             else
             {
+                if(rb.isKinematic)
+                {
+                    rb.isKinematic = false;
+                }
+
                 standStill = false;
                 
                 if(standStillTime != 5 && refillPowerMeter == false)
@@ -161,12 +171,6 @@ public class Player : MonoBehaviour
             // MOVE THE PLAYER
             rb.velocity = new Vector3(Speed, rb.velocity.y, 0);
         }
-        else
-        {
-
-        }
-
-
 
         if(standStill == false && orbitalArrow)
         {

@@ -2733,6 +2733,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1580389056}
     m_Modifications:
+    - target: {fileID: 1013998270511595474, guid: 608a659a8c9bfd344b529b9b1c55168d,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1502799224029858286, guid: 608a659a8c9bfd344b529b9b1c55168d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2045527365006611692, guid: 608a659a8c9bfd344b529b9b1c55168d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2787,6 +2797,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Coin (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6439381402311868599, guid: 608a659a8c9bfd344b529b9b1c55168d,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7590474188006830391, guid: 608a659a8c9bfd344b529b9b1c55168d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3163,7 +3183,7 @@ Transform:
   m_GameObject: {fileID: 371445963}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 168.89001, y: 7.6866, z: 0}
+  m_LocalPosition: {x: 334.39, y: 7.6866, z: 0}
   m_LocalScale: {x: 1, y: 15.7302885, z: 4.3998}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5237,6 +5257,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelLoader: {fileID: 676014055}
   pauseMenuUI: {fileID: 706421145}
+  optionMenuUI: {fileID: 721514765}
   inGameMenuUI: {fileID: 1997102208}
   menu: 3
 --- !u!4 &718058983 stripped
