@@ -5,12 +5,26 @@ using UnityEngine;
 public class VictoryCheck : MonoBehaviour
 {
     [SerializeField] GameObject VictoryCanvas;
-
     [SerializeField] LevelLoader levelLoader;
+    [SerializeField] GameObject player;
+    [SerializeField] static int currentLevel;
 
     public float victoryDuration;
 
     bool finish = false;
+
+    static public int[] finishLVL = new int[4];
+
+
+    private void Start()
+    {
+        for(int i = 0; i < finishLVL.Length; i++)
+        {
+            finishLVL[i] = PlayerPrefs.GetInt("LVL" + i, 0);            
+        }
+
+        Debug.Log("FinishisEscene " + currentLevel + " = " + finishLVL[currentLevel]);
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -18,6 +32,13 @@ public class VictoryCheck : MonoBehaviour
         {
             VictoryCanvas.SetActive(true);
             finish = true;
+            player.SetActive(false);            
+
+            finishLVL[currentLevel] = 1;
+
+            PlayerPrefs.SetInt("LVL" + currentLevel, finishLVL[currentLevel]);
+
+            Debug.Log("FinishisEscene " + currentLevel + " = " + finishLVL[currentLevel]);
         }
     }
 
@@ -32,5 +53,10 @@ public class VictoryCheck : MonoBehaviour
                 levelLoader.PlayGame();
             }
         }
+    }
+
+    static int IsLevelFinished()
+    {
+        return finishLVL[currentLevel];
     }
 }

@@ -13,6 +13,7 @@ public class Player : MonoBehaviour
     [SerializeField] Image powerMeter;
 
     Rigidbody rb;
+    Animator animator;
     public Respawneador respawneador;
 
     public bool isGrounded = true;
@@ -37,6 +38,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        animator = GetComponent<Animator>();
         initialPosition = transform.position;
         initialSpeed = Speed;
         initialJumpForce = JumpForce;
@@ -58,10 +60,21 @@ public class Player : MonoBehaviour
             {
                 jumping = true;
                 isGrounded = false;
+            }
+
+            if(isGrounded)
+            {
+                animator.SetBool("IsFlying", false);
+            }
+            else
+            {
+                animator.SetBool("IsFlying", true);
             }            
         }
         else if (orbitalArrow)
         {
+            animator.SetBool("IsFlying", true);
+
             // PLAYER STANDS STILL WHILE ROTATING BETWEEN 75 AND -75 DEGREES ON INPUT
             // IF THE POWER METER IS NOT REFILLING
             if (Input.GetKey(KeyCode.Space) && refillPowerMeter == false)
