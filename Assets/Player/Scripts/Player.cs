@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
     [SerializeField] float rotationSpeed;
     [SerializeField] GameObject arrow;
     [SerializeField] Image powerMeter;
+    [SerializeField] AudioClip jump;
 
     Rigidbody rb;
     Animator animator;
@@ -33,6 +34,7 @@ public class Player : MonoBehaviour
     Vector3 initialPosition;
     float initialSpeed;
     float initialJumpForce;
+
 
 
     void Start()
@@ -60,6 +62,7 @@ public class Player : MonoBehaviour
             {
                 jumping = true;
                 isGrounded = false;
+                SFXManager.instance.PlaySFX(jump, transform, 1f);
             }
 
             if(isGrounded)
@@ -69,7 +72,7 @@ public class Player : MonoBehaviour
             else
             {
                 animator.SetBool("IsFlying", true);
-            }            
+            }
         }
         else if (orbitalArrow)
         {

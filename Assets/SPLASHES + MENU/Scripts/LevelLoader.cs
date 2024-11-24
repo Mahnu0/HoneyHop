@@ -36,11 +36,7 @@ public class LevelLoader : MonoBehaviour
         {
             timer -= Time.deltaTime;
 
-            if (Input.GetKeyDown(KeyCode.Space) && !crossfade)
-            {
-                crossfade = true;
-            }
-            if (timer <= 0 && !crossfade)
+            if (Input.GetKeyDown(KeyCode.Space) && !crossfade || timer <= 0 && !crossfade)
             {
                 crossfade = true;
             }

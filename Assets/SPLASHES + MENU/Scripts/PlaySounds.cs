@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class PlaySounds : MonoBehaviour
 {
-    [SerializeField] private AudioClip explosion;
+    public AudioClip explosion;
 
     private void Start()
     {
         
     }
 
-    public void Explosion()
+    public void Jump()
     {
         SFXManager.instance.PlaySFX(explosion, transform, 1f);
     }
