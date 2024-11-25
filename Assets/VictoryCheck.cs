@@ -55,7 +55,7 @@ public class VictoryCheck : MonoBehaviour
         }
     }
 
-    static int IsLevelFinished()
+    static public int IsLevelFinished()
     {
         return finishLVL[currentLevel];
     }

@@ -5,13 +5,23 @@ using UnityEngine;
 
 public class Coins : MonoBehaviour
 {
+    [SerializeField] int currentLevel;
     static public int count;
     static public int maxCount;
+    bool haveBeenObtained;
+    int destroyed;
+
+    Vector3 initialPos;
 
     void Awake()
     {
         maxCount++;
         //transform.DORotate(new Vector3(0f, 45f, 0f), 1f, RotateMode.LocalAxisAdd).SetLoops(-1);
+    }
+
+    private void Start()
+    {
+        initialPos = transform.position;
     }
 
     void OnTriggerEnter(Collider other)
@@ -24,9 +34,22 @@ public class Coins : MonoBehaviour
         //transform.DORotate();
         //transform.DOScale().
         //    OnComplete(() => Destroy(gameObject));
-
-        Destroy(gameObject);
+        haveBeenObtained = true;
+        transform.position = new Vector3(initialPos.x, -10, initialPos.z);
     }
+
+    private void Update()
+    {
+        if(VictoryCheck.IsLevelFinished() == currentLevel && haveBeenObtained)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    //private void OnDestroy()
+    //{
+    //    PlayerPrefs.SetInt("CoinsObtained");
+    //}
 
     //private void Start()
     //{
