@@ -20,8 +20,22 @@ public class Coins : MonoBehaviour
     }
 
     private void Start()
-    {
+    {        
+        if (PlayerPrefs.GetInt("firstTimePlaying", 0) == 0)
+        {            
+            PlayerPrefs.SetInt("firstTimePlaying", 1);
+            PlayerPrefs.SetInt("Destroyed", 0);
+
+            Debug.Log("FirstTimePlaying " + PlayerPrefs.GetInt("firstTimePlaying"));
+        }
+
+        if (PlayerPrefs.GetInt("Destroyed") == 1)
+        {
+            transform.position = new Vector3(0, -10, 0);
+        }
+
         initialPos = transform.position;
+        
     }
 
     void OnTriggerEnter(Collider other)
@@ -42,7 +56,7 @@ public class Coins : MonoBehaviour
     {
         if(VictoryCheck.IsLevelFinished() == currentLevel && haveBeenObtained)
         {
-            Destroy(gameObject);
+            PlayerPrefs.SetInt("Destroyed", 1);
         }
     }
 

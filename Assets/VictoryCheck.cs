@@ -17,7 +17,8 @@ public class VictoryCheck : MonoBehaviour
 
 
     private void Start()
-    {
+    {       
+
         for(int i = 0; i < finishLVL.Length; i++)
         {
             finishLVL[i] = PlayerPrefs.GetInt("LVL" + i, 0);            
@@ -34,7 +35,7 @@ public class VictoryCheck : MonoBehaviour
             finish = true;
             player.SetActive(false);            
 
-            finishLVL[currentLevel] = 1;
+            finishLVL[currentLevel] = 0;
 
             PlayerPrefs.SetInt("LVL" + currentLevel, finishLVL[currentLevel]);
 

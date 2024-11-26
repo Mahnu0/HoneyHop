@@ -1228,6 +1228,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Coin (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 5129234534389602312, guid: 608a659a8c9bfd344b529b9b1c55168d,
+        type: 3}
+      propertyPath: currentLevel
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6566,6 +6571,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Coin (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 5129234534389602312, guid: 608a659a8c9bfd344b529b9b1c55168d,
+        type: 3}
+      propertyPath: currentLevel
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6917,6 +6927,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Coin (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5129234534389602312, guid: 608a659a8c9bfd344b529b9b1c55168d,
+        type: 3}
+      propertyPath: currentLevel
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10034,6 +10049,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Coin (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 5129234534389602312, guid: 608a659a8c9bfd344b529b9b1c55168d,
+        type: 3}
+      propertyPath: currentLevel
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -12893,6 +12913,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Coin (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5129234534389602312, guid: 608a659a8c9bfd344b529b9b1c55168d,
+        type: 3}
+      propertyPath: currentLevel
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -15853,6 +15878,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Coin (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 5129234534389602312, guid: 608a659a8c9bfd344b529b9b1c55168d,
+        type: 3}
+      propertyPath: currentLevel
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -16944,6 +16974,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Coin
+      objectReference: {fileID: 0}
+    - target: {fileID: 5129234534389602312, guid: 608a659a8c9bfd344b529b9b1c55168d,
+        type: 3}
+      propertyPath: currentLevel
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -19573,8 +19608,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1523518439}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.07293954, y: 0.17187284, z: -0.012761798, w: 0.9823323}
-  m_LocalPosition: {x: -18, y: 3.58, z: -16.76}
+  m_LocalRotation: {x: 0.07293956, y: 0.17187251, z: -0.012761775, w: 0.98233235}
+  m_LocalPosition: {x: 425.58, y: 5.3, z: -16.76}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -20591,6 +20626,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Coin (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5129234534389602312, guid: 608a659a8c9bfd344b529b9b1c55168d,
+        type: 3}
+      propertyPath: currentLevel
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -25279,6 +25319,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Coin (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 5129234534389602312, guid: 608a659a8c9bfd344b529b9b1c55168d,
+        type: 3}
+      propertyPath: currentLevel
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -26384,6 +26429,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Coin (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5129234534389602312, guid: 608a659a8c9bfd344b529b9b1c55168d,
+        type: 3}
+      propertyPath: currentLevel
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -28613,12 +28663,12 @@ PrefabInstance:
     - target: {fileID: 4255886109514408774, guid: 7a0764fb4ed106a489314f63394c5a66,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -15
+      value: 428.58
       objectReference: {fileID: 0}
     - target: {fileID: 4255886109514408774, guid: 7a0764fb4ed106a489314f63394c5a66,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 2.72
       objectReference: {fileID: 0}
     - target: {fileID: 4255886109514408774, guid: 7a0764fb4ed106a489314f63394c5a66,
         type: 3}
@@ -28764,12 +28814,12 @@ PrefabInstance:
     - target: {fileID: 1178916428364202044, guid: 5d4f9d6dcaaaab142bcd67817f91eff2,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -18
+      value: 425.58
       objectReference: {fileID: 0}
     - target: {fileID: 1178916428364202044, guid: 5d4f9d6dcaaaab142bcd67817f91eff2,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.58
+      value: 5.3
       objectReference: {fileID: 0}
     - target: {fileID: 1178916428364202044, guid: 5d4f9d6dcaaaab142bcd67817f91eff2,
         type: 3}
@@ -28779,22 +28829,22 @@ PrefabInstance:
     - target: {fileID: 1178916428364202044, guid: 5d4f9d6dcaaaab142bcd67817f91eff2,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9823323
+      value: 0.98233235
       objectReference: {fileID: 0}
     - target: {fileID: 1178916428364202044, guid: 5d4f9d6dcaaaab142bcd67817f91eff2,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.07293954
+      value: 0.07293956
       objectReference: {fileID: 0}
     - target: {fileID: 1178916428364202044, guid: 5d4f9d6dcaaaab142bcd67817f91eff2,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.17187284
+      value: 0.17187251
       objectReference: {fileID: 0}
     - target: {fileID: 1178916428364202044, guid: 5d4f9d6dcaaaab142bcd67817f91eff2,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.012761798
+      value: -0.012761775
       objectReference: {fileID: 0}
     - target: {fileID: 1178916428364202044, guid: 5d4f9d6dcaaaab142bcd67817f91eff2,
         type: 3}
