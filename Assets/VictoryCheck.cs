@@ -7,24 +7,28 @@ public class VictoryCheck : MonoBehaviour
     [SerializeField] GameObject VictoryCanvas;
     [SerializeField] LevelLoader levelLoader;
     [SerializeField] GameObject player;
-    [SerializeField] static int currentLevel;
+    [SerializeField] int level;
+
+    static int currentLevel;
+    static bool playerJustFinished = false;
 
     public float victoryDuration;
 
     bool finish = false;
 
-    static public int[] finishLVL = new int[4];
-
-
     private void Start()
-    {       
+    {
+        playerJustFinished = false;
 
-        for(int i = 0; i < finishLVL.Length; i++)
+        if(level == 1)
         {
-            finishLVL[i] = PlayerPrefs.GetInt("LVL" + i, 0);            
+            currentLevel = 1;
+        }
+        else
+        {
+            currentLevel = 2;
         }
 
-        Debug.Log("FinishisEscene " + currentLevel + " = " + finishLVL[currentLevel]);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -33,13 +37,11 @@ public class VictoryCheck : MonoBehaviour
         {
             VictoryCanvas.SetActive(true);
             finish = true;
-            player.SetActive(false);            
+            player.SetActive(false);
 
-            finishLVL[currentLevel] = 0;
+            playerJustFinished = true;
 
-            PlayerPrefs.SetInt("LVL" + currentLevel, finishLVL[currentLevel]);
-
-            Debug.Log("FinishisEscene " + currentLevel + " = " + finishLVL[currentLevel]);
+            Debug.Log("Finished = " + DidPlayerFinished());
         }
     }
 
@@ -56,8 +58,13 @@ public class VictoryCheck : MonoBehaviour
         }
     }
 
-    static public int IsLevelFinished()
+    static public bool DidPlayerFinished()
     {
-        return finishLVL[currentLevel];
+        return playerJustFinished;        
+    }
+
+    static public int GetCurrentLevel()
+    {
+        return currentLevel;
     }
 }
