@@ -15,17 +15,20 @@ public class Coins : MonoBehaviour
     Vector3 initialPos;
 
     void Awake()
-    {0
-        count = 0;
+    {
+        PlayerPrefs.SetInt("HaveBeenTaken" + id + currentLevel, 0);
 
-        if(Player)
+        if (PlayerPrefs.GetInt("Destroyed" + id + currentLevel, 0) == 1)
+        {
+            count++;
+        }
 
         maxCount++;
     }
 
     private void Start()
     {
-        if(PlayerPrefs.GetInt("Destroyed" + id, 0) == 1)
+        if(PlayerPrefs.GetInt("Destroyed" + id + currentLevel, 0) == 1)
         {
             transform.position = new Vector3(0, -10, 0);
         }
@@ -33,8 +36,7 @@ public class Coins : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        count++;
-        PlayerPrefs.SetInt("HaveBeenTaken" + id, 1);
+        PlayerPrefs.SetInt("HaveBeenTaken" + id + currentLevel, 1);
         transform.position = new Vector3(0, -10, 0);
     }
 
@@ -42,9 +44,9 @@ public class Coins : MonoBehaviour
     {
         if(VictoryCheck.DidPlayerFinished() == true &&
            currentLevel == VictoryCheck.GetCurrentLevel() &&
-           PlayerPrefs.GetInt("HaveBeenTaken" + id, 0) == 1)
+           PlayerPrefs.GetInt("HaveBeenTaken" + id + currentLevel, 0) == 1)
         {
-            PlayerPrefs.SetInt("Destroyed" + id, 1);
+            PlayerPrefs.SetInt("Destroyed" + id + currentLevel, 1);
         }
     }
 
