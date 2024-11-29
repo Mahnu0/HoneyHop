@@ -111,7 +111,9 @@ public class Player : MonoBehaviour
                     turnDown = false;
                 }
 
-                transform.Rotate(0, 0, rotationSpeed*Time.deltaTime, Space.World);
+                //transform.Rotate(0, 0, rotationSpeed*Time.deltaTime, Space.World);
+
+                transform.Rotate(Vector3.forward, rotationSpeed * Time.deltaTime);
 
                 // rb.velocity = Vector3.zero;
 
