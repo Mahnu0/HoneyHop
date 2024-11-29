@@ -89,13 +89,13 @@ public class Player : MonoBehaviour
 
                 float rotation = transform.rotation.eulerAngles.z;
                 
-                if (rotation > 180) { rotation -= 360; }
+                if (rotation > 180f) { rotation -= 360f; }
 
-                if (rotation > 75 && rotationSpeed > 0)
+                if (rotation > 75f && rotationSpeed > 0f)
                 {
                     turnDown = true;
                 }                
-                else if (rotation < -75 && rotationSpeed < 0)
+                else if (rotation < -75f && rotationSpeed < 0f)
                 {
                     turnUp = true;
                 }
@@ -137,7 +137,7 @@ public class Player : MonoBehaviour
 
                 standStill = false;
                 
-                if(standStillTime != 5 && refillPowerMeter == false)
+                if(standStillTime < 5f && refillPowerMeter == false)
                 {
                     refillPowerMeter = true;
                 }
