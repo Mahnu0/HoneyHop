@@ -4950,6 +4950,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6c1dc25e62f98c4e82afe6bf2bbfcb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentLevel: 0
+  id: 0
+  coin: {fileID: 8300000, guid: c7d050f14c08d7a489ed58d596b3e24d, type: 3}
 --- !u!1001 &1736817427150632127
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -9,6 +9,7 @@ public class Coins : MonoBehaviour
     static public int maxCount;
     [SerializeField] int currentLevel;
     [SerializeField] int id;
+    [SerializeField] AudioClip coin;
 
     int totalCoins;
 
@@ -37,6 +38,7 @@ public class Coins : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         PlayerPrefs.SetInt("HaveBeenTaken" + id + currentLevel, 1);
+        SFXManager.instance.PlaySFX(coin, transform, 1f);
         transform.position = new Vector3(0, -10, 0);
     }
 

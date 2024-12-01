@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 262.38358, g: 325.10843, b: 430.30963, a: 1}
+  m_IndirectSpecularColor: {r: 261.80057, g: 324.3278, b: 429.24698, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1196,12 +1196,12 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1140247342}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2045948567}
+  m_Father: {fileID: 1855888913}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1603,6 +1603,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1140247343}
   - {fileID: 2039677331}
   - {fileID: 812822987}
   - {fileID: 1655546623}
@@ -1841,7 +1842,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 532672953}
-  - {fileID: 1140247343}
   - {fileID: 1855888913}
   - {fileID: 8544118521513431009}
   m_Father: {fileID: 0}
@@ -2001,7 +2001,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: ecb05765c6f6f1847b8da5f94783ee1e, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 7258936196941811951, guid: 70270eaece7ecfb469c50b6234944879,
         type: 3}
       propertyPath: fullScreen
@@ -2249,6 +2249,11 @@ PrefabInstance:
       propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5085911271967058936, guid: cb7e672dad6b895438203a7ca78a38b6,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 39.8
+      objectReference: {fileID: 0}
     - target: {fileID: 5113854309846449600, guid: cb7e672dad6b895438203a7ca78a38b6,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -2334,10 +2339,20 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1855888912}
+    - target: {fileID: 8086687905591359445, guid: cb7e672dad6b895438203a7ca78a38b6,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 16.62001
+      objectReference: {fileID: 0}
     - target: {fileID: 8357826437109521672, guid: cb7e672dad6b895438203a7ca78a38b6,
         type: 3}
       propertyPath: m_Name
       value: OptionsMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357826437109521672, guid: cb7e672dad6b895438203a7ca78a38b6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8599941575258085588, guid: cb7e672dad6b895438203a7ca78a38b6,
         type: 3}
@@ -2390,7 +2405,13 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1185606450766798348}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 1891897249049701254, guid: cb7e672dad6b895438203a7ca78a38b6, type: 3}
+    - {fileID: 2406355017505502965, guid: cb7e672dad6b895438203a7ca78a38b6, type: 3}
+    - {fileID: 1121454487859409891, guid: cb7e672dad6b895438203a7ca78a38b6, type: 3}
+    - {fileID: 359011180239996151, guid: cb7e672dad6b895438203a7ca78a38b6, type: 3}
+    - {fileID: 1843858548617148845, guid: cb7e672dad6b895438203a7ca78a38b6, type: 3}
+    - {fileID: 8334725064722189528, guid: cb7e672dad6b895438203a7ca78a38b6, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cb7e672dad6b895438203a7ca78a38b6, type: 3}

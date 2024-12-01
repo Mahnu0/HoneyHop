@@ -7,6 +7,7 @@ public class Respawneador : MonoBehaviour
 {
     public float timeToRespawn = 0;
     [SerializeField] GameObject player;
+    [SerializeField] AudioClip death;
 
     Player playerBee;
 
@@ -16,13 +17,14 @@ public class Respawneador : MonoBehaviour
     public void Respawn()
     {
         isRespawning = true;
+        SFXManager.instance.PlaySFX(death, transform, 1f);
     }
 
     private void Update()
     {
         if(isRespawning)
         {
-            player.SetActive(false);            
+            player.SetActive(false);
 
             if (timer >= timeToRespawn)
             {
@@ -35,7 +37,7 @@ public class Respawneador : MonoBehaviour
                 player.GetComponent<Rigidbody>().velocity = new Vector3(9, 0, 0);
                 player.GetComponent<Rigidbody>().AddForce(0, 99, 0);
 
-                player.transform.position = new Vector3(187.14f, 7.43f, 0);
+                player.transform.position = new Vector3(-15f, 1f, 0);
 
                 player.SetActive(true);
 

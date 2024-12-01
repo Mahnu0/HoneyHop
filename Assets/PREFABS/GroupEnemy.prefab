@@ -408,10 +408,10 @@ GameObject:
   - component: {fileID: 4652474487053800608}
   - component: {fileID: 6503730032860807371}
   - component: {fileID: 8369167607215507048}
-  - component: {fileID: 35414428150627040}
   - component: {fileID: 5125327012877382985}
   - component: {fileID: 3918126505023870749}
   - component: {fileID: 7076485221728975}
+  - component: {fileID: 7097398054428087770}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -485,27 +485,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &35414428150627040
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2437442336851501728}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &5125327012877382985
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -567,6 +546,29 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!136 &7097398054428087770
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2437442336851501728}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.23844513
+  m_Height: 1.092747
+  m_Direction: 0
+  m_Center: {x: 0, y: -0.04, z: 0}
 --- !u!1 &2518708024978012398
 GameObject:
   m_ObjectHideFlags: 0

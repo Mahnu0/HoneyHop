@@ -44,6 +44,8 @@ public class Player : MonoBehaviour
         initialPosition = transform.position;
         initialSpeed = Speed;
         initialJumpForce = JumpForce;
+
+        Physics.gravity = new Vector3(0, -45, 0);
     }
 
     public Vector3 GetInitialPosition()
