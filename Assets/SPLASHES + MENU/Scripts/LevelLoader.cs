@@ -69,12 +69,15 @@ public class LevelLoader : MonoBehaviour
 
     public void Level1()
     {
+        Coins.count = 0;
         Coins.maxCount = 0;
         LoadNextLevel(level1, 1);
     }
 
     public void Level2()
     {
+        Coins.count = 0;
+        Coins.maxCount = 0;
         LoadNextLevel(level2, 1);
     }
 
@@ -98,8 +101,6 @@ public class LevelLoader : MonoBehaviour
         SavePreviousScene();
 
         StartCoroutine(LoadLevel(scene, t));
-
-        Coins.maxCount = 0;
         
         crossfade = false;
     }
