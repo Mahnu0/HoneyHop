@@ -13,7 +13,6 @@ public class Coins : MonoBehaviour
 
     int totalCoins;
 
-    Vector3 initialPos;
 
     void Awake()
     {

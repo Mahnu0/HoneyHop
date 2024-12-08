@@ -13,14 +13,11 @@ public class CoinsManager : MonoBehaviour
     int count1 = 0;
     int count2 = 0;
 
-    int maxCount1;
-    int maxCount2;
-
     bool noMoreCoins = false;
 
     private void Start()
     {
-        for(int i = 1; i < totalCoins1; i++)
+        for(int i = 1; i < totalCoins1 + 1; i++)
         {
             if(PlayerPrefs.GetInt("Destroyed" + i + 1) != 0)
             {
@@ -28,7 +25,7 @@ public class CoinsManager : MonoBehaviour
             }
         }
 
-        for (int i = 1; i < totalCoins2; i++)
+        for (int i = 1; i < totalCoins2 + 1; i++)
         {
             if (PlayerPrefs.GetInt("Destroyed" + i + 2) != 0)
             {
@@ -39,7 +36,7 @@ public class CoinsManager : MonoBehaviour
 
     void Update()
     {
-        Counter1.text = $"{count1} / {maxCount1}";
-        Counter2.text = $"{count2} / {maxCount2}";
+        Counter1.text = $"{count1} / {totalCoins1}";
+        Counter2.text = $"{count2} / {totalCoins2}";
     }
 }
